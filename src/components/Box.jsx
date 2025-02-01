@@ -5,13 +5,17 @@ import styled from "styled-components";
 const StyledBox = styled.div`
   width: 100px;
   height: 100px;
-  background-color: "gray";
+  background-color: ${(props) => (props.$active ? "blue" : "gray")};
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: white;
   font-size: 20px;
+
+  &:hover {
+    background-color: ${(props) => (props.$active ? "darkblue" : "darkgray")};
+  }
 `;
 
 function Box({ active, onClick }) {
